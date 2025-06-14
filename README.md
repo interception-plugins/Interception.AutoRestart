@@ -1,4 +1,4 @@
-# Interception.DiscordSpy
+# Interception.AutoRestart
 
 Unturned RocketMod plugin for server's auto restarting (or auto shutdowning if you wish)
 	
