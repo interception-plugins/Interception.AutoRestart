@@ -25,5 +25,6 @@ A part of [Interception.Module](https://github.com/interception-plugins/Intercep
   <Translation Id="kick_reason" Value="Server is restarting, please wait..." />
   <Translation Id="restart_in" Value="Server will restart in {0}..." />
   <Translation Id="cmd_restart_restart_performed" Value="Server will restart in {0} seconds!" />
+  <Translation Id="cmd_restart_restart_performed_toplayer" Value="What's done cannot be undone" />
 </Translations>
 ```
