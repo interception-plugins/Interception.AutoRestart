@@ -9,7 +9,7 @@ using Rocket.Core.Plugins;
 using Rocket.Unturned.Player;
 using Rocket.API.Collections;
 
-using interception.server;
+using interception.process;
 using interception.utils;
 using interception.cron;
 
@@ -87,7 +87,8 @@ namespace interception.plugins.autorestart {
         {
             { "kick_reason", "Server is restarting, please wait..." },
             { "restart_in", "Server will restart in {0}..." },
-            { "cmd_restart_restart_performed", "Server will restart in {0} seconds!" }
+            { "cmd_restart_restart_performed", "Server will restart in {0} seconds!" },
+            { "cmd_restart_restart_performed_toplayer", "What's done cannot be undone" }
         };
     }
 }
