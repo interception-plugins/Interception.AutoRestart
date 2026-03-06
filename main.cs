@@ -22,13 +22,13 @@ namespace interception.plugins.autorestart {
             chat_message_icon_url = "http://example.com/image.png";
             shutdown_events = new List<shutdown_event>() {
                 new shutdown_event() {
-                    time = "11:58:00",
+                    time = "11:58",
                     delay = 120,
                     should_restart = true,
                     print_messages = true
                 },
                 new shutdown_event() {
-                    time = "23:58:00",
+                    time = "23:58",
                     delay = 120,
                     should_restart = false,
                     print_messages = true
@@ -52,7 +52,7 @@ namespace interception.plugins.autorestart {
                 yield return new WaitForSecondsRealtime((float)delay);
             }
             if (should_restart)
-                restart_manager.restart(main.instance.Translate("kick_reason"));
+                restart_manager.restart(0, main.instance.Translate("kick_reason"));
             else
                 Provider.shutdown();
         }
@@ -70,7 +70,7 @@ namespace interception.plugins.autorestart {
             var len = cfg.shutdown_events.Count;
             for (int i = 0; i < len; i++)
                 cron_manager.register_event(new cron_event($"restart_event_{i}", 
-                    DateTime.Parse(cfg.shutdown_events[i].time), true, restart, cfg.shutdown_events[i].delay, cfg.shutdown_events[i].should_restart, cfg.shutdown_events[i].print_messages));
+                    TimeSpan.Parse(cfg.shutdown_events[i].time), true, restart, cfg.shutdown_events[i].delay, cfg.shutdown_events[i].should_restart, cfg.shutdown_events[i].print_messages));
             GC.Collect();
         }
 
